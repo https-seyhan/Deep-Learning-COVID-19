@@ -1,12 +1,13 @@
 from Bio.PDB import *
 import os
 import collections
-os.chdir('/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020')
+location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
+os.chdir(location)
 import xpdb   # this is the module described below
 import pandas as pd
 from collections import Counter
-
 from itertools import groupby
+import glob
 
 # read
 sloppyparser = PDBParser(PERMISSIVE=True,
@@ -43,6 +44,20 @@ for item, val in enumerate(sortedatomfreq):
     print(" Atom {} has the value of {}".format(val, atomfreq[val]))
     #print(" Item {} has the value of {}".format(item, val))
 
+
+def getFileNames(location):
+    files = []
+    print('getFileNames called!!!')
+    #print(location)
+    for file_name in glob.iglob(location + '/*.pdb', recursive=True):
+        #print(file_name)
+        #print(file_name.split('/')[-1])
+        files.append(file_name.split('/')[-1])
+    return  files
+
+if __name__ == '__main__':
+    fileNames = getFileNames(location)
+    print(fileNames)
 
 
 
