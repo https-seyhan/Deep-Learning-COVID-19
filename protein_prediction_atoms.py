@@ -25,14 +25,16 @@ class Atoms:
         self.M_protein = pd.DataFrame()
         self.Protein_3a = pd.DataFrame()
         self.nsp6 = pd.DataFrame()
+        self.pdbfile = ''
 
 
     def getPDB(self, filename):
+        self.pdbfile = filename
         structure = sloppyparser.get_structure('MD_system', filename)
         self.atoms = structure.get_atoms()
         print("File name {} has atoms {}".format(filename, self.atoms))
-
-    def atomdict(self):
+        self.__atomdict()
+    def __atomdict(self):
         print("atomdict called!!!")
         for atom in self.atoms:
             # print(type(atom))
@@ -57,10 +59,36 @@ class Atoms:
 
     def __printAtomFreq(self, sortedatomfreq, atomfreq):
         # Print Atom frequency by descented order
+
         for item, val in enumerate(sortedatomfreq):
             # print(" Item {} has the value of {}".format(item, val))
             print(" Atom {} has the value of {}".format(val, atomfreq[val]))
             # print(" Item {} has the value of {}".format(item, val))
+
+            if self.pdbfile == 'PL_PRO_C_terminal':
+                print("This is it")
+                self.PL_PRO_C_terminal.columns = ['Atom', 'freq']
+
+            elif self.pdbfile == 'nsp2':
+                self.nsp2.columns = ['Atom', 'freq']
+
+            elif self.pdbfile == 'nsp4':
+                self.nsp4.columns = ['Atom', 'freq']
+
+            elif self.pdbfile == 'nsp6':
+                self.nsp4.columns = ['Atom', 'freq']
+
+            elif self.pdbfile == 'M_protein':
+                self.M_protein.columns = ['Atom', 'freq']
+
+            elif self.pdbfile == 'Protein_3a':
+                self.Protein_3a.columns = ['Atom', 'freq']
+            else:
+                print("File does not exist")
+
+
+        print("PDB file ", self.pdbfile)
+
 
 def getFileNames(location):
     files = []
