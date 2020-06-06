@@ -8,7 +8,10 @@ import pandas as pd
 from collections import Counter
 from itertools import groupby
 import glob
+import seaborn as sb
+from matplotlib import  pyplot as plt
 
+#This codes get the frequency distribution of each atoms in all protein types and outputs them to CSV files.
 # read
 sloppyparser = PDBParser(PERMISSIVE=True,
                          structure_builder=xpdb.SloppyStructureBuilder())
@@ -67,31 +70,31 @@ class Atoms:
         print("File Name {} !!!".format(self.pdbfile))
         for item, val in enumerate(sortedatomfreq):
             # print(" Item {} has the value of {}".format(item, val))
-            print(" Atom {} has the value of {}".format(val, atomfreq[val]))
+            #print(" Atom {} has the value of {}".format(val, atomfreq[val]))
             # print(" Item {} has the value of {}".format(item, val))
 
             if self.pdbfile == 'PL_PRO_C_terminal':
-                print("File {} called".format(self.pdbfile ))
+                #print("File {} called".format(self.pdbfile ))
                 self.__getPDBData(val,atomfreq[val], self.pdbfile)
 
             elif self.pdbfile == 'nsp2':
-                print("File {} called".format(self.pdbfile ))
+                #print("File {} called".format(self.pdbfile ))
                 self.__getPDBData(val, atomfreq[val], self.pdbfile)
 
             elif self.pdbfile == 'nsp4':
-                print("File {} called".format(self.pdbfile ))
+                #print("File {} called".format(self.pdbfile ))
                 self.__getPDBData(val, atomfreq[val], self.pdbfile)
 
             elif self.pdbfile == 'nsp6':
-                print("File {} called".format(self.pdbfile))
+                #print("File {} called".format(self.pdbfile))
                 self.__getPDBData(val, atomfreq[val], self.pdbfile)
 
             elif self.pdbfile == 'M_protein':
-                print("File {} called".format(self.pdbfile))
+                #print("File {} called".format(self.pdbfile))
                 self.__getPDBData(val, atomfreq[val], self.pdbfile)
 
             elif self.pdbfile == 'Protein_3a':
-                print("File {} called".format(self.pdbfile ))
+                #print("File {} called".format(self.pdbfile ))
                 self.__getPDBData(val, atomfreq[val], self.pdbfile)
             else:
                 print("File does not exist")
@@ -100,7 +103,7 @@ class Atoms:
         self.__outputPDB()
 
     def __getPDBData(self, val, freq, pdbname):
-        print("PDB File::: ", pdbname)
+        #print("PDB File::: ", pdbname)
         new_row = {'Atom': val, 'freq': freq}
         if pdbname == 'PL_PRO_C_terminal':
             self.PL_PRO_C_terminal = self.PL_PRO_C_terminal.append(new_row, ignore_index=True )
@@ -123,8 +126,29 @@ class Atoms:
         self.M_protein.to_csv('M_protein.csv', sep=',', index=False)
         self.Protein_3a.to_csv('Protein_3a.csv', sep=',', index=False)
 
+    def visualiseData(self, filename):
+        print("Visualise Data")
+        print("File Name !!!!!!", filename )
 
-
+        if filename.split(".")[0] == 'PL_PRO_C_terminal':
+            print("PL_PRO_C_terminal called")
+            sb.barplot(data=self.PL_PRO_C_terminal, x='Atom', y='freq')
+            plt.show()
+        elif filename.split(".")[0] == 'nsp2':
+            sb.barplot(data=self.nsp2, x='Atom', y='freq')
+            plt.show()
+        elif filename.split(".")[0] == 'nsp4':
+            sb.barplot(data=self.nsp4, x='Atom', y='freq')
+            plt.show()
+        elif filename.split(".")[0] == 'nsp6':
+            sb.barplot(data=self.nsp6, x='Atom', y='freq')
+            plt.show()
+        elif filename.split(".")[0] == 'M_protein':
+            sb.barplot(data=self.M_protein, x='Atom', y='freq')
+            plt.show()
+        elif filename.split(".")[0] == 'Protein_3a':
+            sb.barplot(data=self.Protein_3a, x='Atom', y='freq')
+            plt.show()
 
 def getFileNames(location):
     files = []
@@ -137,13 +161,14 @@ def getFileNames(location):
     return files
 
 if __name__ == '__main__':
-    proteins= Atoms()
+    proteins = Atoms()
     #proteins.atomdict()
     fileNames = getFileNames(location)
     #print(fileNames)
     for name in range(len(fileNames)):
         print(fileNames[name])
         proteins.getPDB(fileNames[name])
+        proteins.visualiseData(fileNames[name])
 
 
 
