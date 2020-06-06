@@ -18,7 +18,7 @@ class Atoms:
     def __init__(self):
 
         self.atomlist= []
-        self.PL_PRO_C_terminal = pd.DataFrame()
+        self.PL_PRO_C_terminal = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp2 = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp4= pd.DataFrame(columns=['Atom', 'freq'])
         self.M_protein = pd.DataFrame(columns=['Atom', 'freq'])
@@ -62,6 +62,7 @@ class Atoms:
         self.__printAtomFreq(sortedatomfreq, atomfreq)
 
     def __printAtomFreq(self, sortedatomfreq, atomfreq):
+
         # Print Atom frequency by descented order
         print("File Name {} !!!".format(self.pdbfile))
         for item, val in enumerate(sortedatomfreq):
@@ -71,6 +72,9 @@ class Atoms:
 
             if self.pdbfile == 'PL_PRO_C_terminal':
                 print("File {} called".format(self.pdbfile ))
+                new_row = {'Atom': val, 'freq': atomfreq[val]}
+                self.PL_PRO_C_terminal = self.PL_PRO_C_terminal.append(new_row, ignore_index=True, )
+                #print("DataFrame ", self.PL_PRO_C_terminal)
 
 
             elif self.pdbfile == 'nsp2':
@@ -92,6 +96,16 @@ class Atoms:
 
 
         print("PDB file ", self.pdbfile)
+        self.__outputPDB()
+
+    def __getPDBData(self, val, freq, pdbname):
+        new_row = {'Atom': val, 'freq': atomfreq[val]}
+        self.pdbname= self.pdbname.append(new_row, ignore_index=True, )
+
+
+    def __outputPDB(self):
+        self.PL_PRO_C_terminal.to_csv('self.PL_PRO_C_terminal_freq.csv', sep=',', index=False)
+
 
 
 def getFileNames(location):
