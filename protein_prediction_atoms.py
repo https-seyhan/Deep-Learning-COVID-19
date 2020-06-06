@@ -13,27 +13,31 @@ import glob
 sloppyparser = PDBParser(PERMISSIVE=True,
                          structure_builder=xpdb.SloppyStructureBuilder())
 
-
 class Atoms:
 
     def __init__(self):
 
         self.atomlist= []
         self.PL_PRO_C_terminal = pd.DataFrame()
-        self.nsp2 = pd.DataFrame()
-        self.nsp4= pd.DataFrame()
-        self.M_protein = pd.DataFrame()
-        self.Protein_3a = pd.DataFrame()
-        self.nsp6 = pd.DataFrame()
+        self.nsp2 = pd.DataFrame(columns=['Atom', 'freq'])
+        self.nsp4= pd.DataFrame(columns=['Atom', 'freq'])
+        self.M_protein = pd.DataFrame(columns=['Atom', 'freq'])
+        self.Protein_3a = pd.DataFrame(columns=['Atom', 'freq'])
+        self.nsp6 = pd.DataFrame(columns=['Atom', 'freq'])
         self.pdbfile = ''
 
 
     def getPDB(self, filename):
-        self.pdbfile = filename
+        self.pdbfile = filename.split(".")[0]
+        #print("File Name {} !!!".format(self.pdbfile))
         structure = sloppyparser.get_structure('MD_system', filename)
         self.atoms = structure.get_atoms()
         print("File name {} has atoms {}".format(filename, self.atoms))
         self.__atomdict()
+
+    def getResidue(self):
+        print("Residue")
+
     def __atomdict(self):
         print("atomdict called!!!")
         for atom in self.atoms:
@@ -59,30 +63,30 @@ class Atoms:
 
     def __printAtomFreq(self, sortedatomfreq, atomfreq):
         # Print Atom frequency by descented order
-
+        print("File Name {} !!!".format(self.pdbfile))
         for item, val in enumerate(sortedatomfreq):
             # print(" Item {} has the value of {}".format(item, val))
             print(" Atom {} has the value of {}".format(val, atomfreq[val]))
             # print(" Item {} has the value of {}".format(item, val))
 
             if self.pdbfile == 'PL_PRO_C_terminal':
-                print("This is it")
-                self.PL_PRO_C_terminal.columns = ['Atom', 'freq']
+                print("File {} called".format(self.pdbfile ))
+
 
             elif self.pdbfile == 'nsp2':
-                self.nsp2.columns = ['Atom', 'freq']
+                print("File {} called".format(self.pdbfile ))
 
             elif self.pdbfile == 'nsp4':
-                self.nsp4.columns = ['Atom', 'freq']
+                print("File {} called".format(self.pdbfile ))
 
             elif self.pdbfile == 'nsp6':
-                self.nsp4.columns = ['Atom', 'freq']
+                print("File {} called".format(self.pdbfile))
 
             elif self.pdbfile == 'M_protein':
-                self.M_protein.columns = ['Atom', 'freq']
+                print("File {} called".format(self.pdbfile))
 
             elif self.pdbfile == 'Protein_3a':
-                self.Protein_3a.columns = ['Atom', 'freq']
+                print("File {} called".format(self.pdbfile ))
             else:
                 print("File does not exist")
 
