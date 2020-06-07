@@ -9,7 +9,9 @@ from collections import Counter
 from itertools import groupby
 import glob
 import seaborn as sb
-from matplotlib import  pyplot as plt
+from matplotlib import pyplot as plt
+
+#fig, axs = plt.subplots(ncols=3)
 
 #This codes get the frequency distribution of each atoms in all protein types and outputs them to CSV files.
 # read
@@ -20,7 +22,7 @@ class Atoms:
 
     def __init__(self):
 
-        self.atomlist= []
+        #self.atomlist= []
         self.PL_PRO_C_terminal = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp2 = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp4= pd.DataFrame(columns=['Atom', 'freq'])
@@ -43,10 +45,11 @@ class Atoms:
 
     def __atomdict(self):
         print("atomdict called!!!")
+        atomlist = []
         for atom in self.atoms:
             # print(type(atom))
-            self.atomlist.append(atom)
-        atomdict = Counter(self.atomlist)
+            atomlist.append(atom)
+        atomdict = Counter(atomlist)
         #print(atomdict)
         self.__atomfreq(atomdict)
 
@@ -56,10 +59,10 @@ class Atoms:
             # print(" Item {} has the value of {}".format(item, val))
             value = str(val).strip('<>Atom ')
             atoms.append(value)
-            # print(value)
-            atoms.append(value)
+            print(value)
+            #atoms.append(value)
 
-        atomfreq = collections.Counter(atoms)
+        atomfreq = collections.Counter(atoms) # count number of occurrences of atoms
         sortedatomfreq = {k: v for k, v in sorted(atomfreq.items(), key=lambda item: item[1], reverse=True)}
         #print(sortedatomfreq)
         self.__printAtomFreq(sortedatomfreq, atomfreq)
@@ -149,6 +152,8 @@ class Atoms:
         elif filename.split(".")[0] == 'Protein_3a':
             sb.barplot(data=self.Protein_3a, x='Atom', y='freq')
             plt.show()
+    def visualiseAll(self):
+        print("Visualise All")
 
 def getFileNames(location):
     files = []
