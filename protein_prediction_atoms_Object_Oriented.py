@@ -29,6 +29,7 @@ class Atoms:
         self.M_protein = pd.DataFrame(columns=['Atom', 'freq'])
         self.Protein_3a = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp6 = pd.DataFrame(columns=['Atom', 'freq'])
+        self.allData = pd.DataFrame(columns=['fileName','Atom', 'freq'])
         self.pdbfile = ''
 
 
@@ -59,7 +60,7 @@ class Atoms:
             # print(" Item {} has the value of {}".format(item, val))
             value = str(val).strip('<>Atom ')
             atoms.append(value)
-            print(value)
+            #print(value)
             #atoms.append(value)
 
         atomfreq = collections.Counter(atoms) # count number of occurrences of atoms
@@ -106,6 +107,7 @@ class Atoms:
         self.__outputPDB()
 
     def __getPDBData(self, val, freq, pdbname):
+        #insert data to the dataframes
         #print("PDB File::: ", pdbname)
         new_row = {'Atom': val, 'freq': freq}
         if pdbname == 'PL_PRO_C_terminal':
@@ -122,6 +124,7 @@ class Atoms:
             self.Protein_3a = self.Protein_3a.append(new_row, ignore_index=True)
 
     def __outputPDB(self):
+        # import data to csv files
         self.PL_PRO_C_terminal.to_csv('PL_PRO_C_terminal_freq.csv', sep=',', index=False)
         self.nsp2.to_csv('nsp2_freq.csv', sep=',', index=False)
         self.nsp4.to_csv('nsp4_freq.csv', sep=',', index=False)
@@ -129,6 +132,8 @@ class Atoms:
         self.M_protein.to_csv('M_protein.csv', sep=',', index=False)
         self.Protein_3a.to_csv('Protein_3a.csv', sep=',', index=False)
 
+    def combineAllData(self):
+        print("Append all data")
     def visualiseData(self, filename):
         print("Visualise Data")
         print("File Name !!!!!!", filename )
@@ -154,6 +159,15 @@ class Atoms:
             plt.show()
     def visualiseAll(self):
         print("Visualise All")
+        # sb.barplot(data=self.PL_PRO_C_terminal, x='Atom', y='freq').set_title('PL_PRO_C_terminal')
+        # sb.barplot(data=self.nsp2, x='Atom', y='freq').set_title('nsp2')
+        # sb.barplot(data=self.nsp4, x='Atom', y='freq').set_title('nsp4')
+        # sb.barplot(data=self.nsp6, x='Atom', y='freq').set_title('nsp6')
+        # sb.barplot(data=self.M_protein, x='Atom', y='freq').set_title('M_protein')
+        # sb.barplot(data=self.Protein_3a, x='Atom', y='freq').set_title('Protein_3a')
+        plt.hist([self.nsp4['freq'], self.nsp2['freq']])
+        plt.show()
+
 
 def getFileNames(location):
     files = []
@@ -173,7 +187,8 @@ if __name__ == '__main__':
     for name in range(len(fileNames)):
         print(fileNames[name])
         proteins.getPDB(fileNames[name])
-        proteins.visualiseData(fileNames[name])
+        #proteins.visualiseData(fileNames[name])
+    #proteins.visualiseAll()
 
 
 
