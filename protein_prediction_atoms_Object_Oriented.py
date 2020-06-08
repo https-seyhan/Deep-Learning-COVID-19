@@ -32,7 +32,6 @@ class Atoms:
         self.allData = pd.DataFrame(columns=['fileName','Atom', 'freq'])
         self.pdbfile = ''
 
-
     def getPDB(self, filename):
         self.pdbfile = filename.split(".")[0]
         #print("File Name {} !!!".format(self.pdbfile))
@@ -134,6 +133,19 @@ class Atoms:
 
     def combineAllData(self):
         print("Append all data")
+        self.PL_PRO_C_terminal['protein_name'] = 'PL_PRO_C_terminal'
+        print('PL_PRO_C_terminal Columns ',self.PL_PRO_C_terminal.columns )
+        self.nsp2['protein_name'] = 'nsp2'
+        print('nsp2 ',self.nsp2.columns )
+        self.nsp4['protein_name'] = 'nsp4'
+        print('nsp4 Columns ',self.nsp4.columns )
+        self.nsp6['protein_name'] = 'nsp6'
+        print('nsp6 Columns ',self.nsp6.columns )
+        self.M_protein['protein_name'] = 'M_protein'
+        print('M_protein Columns ',self.M_protein.columns )
+        self.Protein_3a['protein_name'] = 'Protein_3a'
+        print('Protein_3a Columns ',self.Protein_3a.columns )
+
     def visualiseData(self, filename):
         print("Visualise Data")
         print("File Name !!!!!!", filename )
@@ -189,6 +201,7 @@ if __name__ == '__main__':
         proteins.getPDB(fileNames[name])
         #proteins.visualiseData(fileNames[name])
     #proteins.visualiseAll()
+    proteins.combineAllData()
 
 
 
