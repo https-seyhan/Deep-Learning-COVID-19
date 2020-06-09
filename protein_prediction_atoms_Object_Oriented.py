@@ -197,8 +197,12 @@ class Atoms:
         # sb.barplot(data=self.nsp6, x='Atom', y='freq').set_title('nsp6')
         # sb.barplot(data=self.M_protein, x='Atom', y='freq').set_title('M_protein')
         # sb.barplot(data=self.Protein_3a, x='Atom', y='freq').set_title('Protein_3a')
-        plt.hist([self.nsp4['freq'], self.nsp2['freq']])
+        
+        #Show frequency Distribution of each protein types of COVID-19
+        sb.barplot(data=alldata, x= 'protein_name', y='freq', estimator=sum).set_title('COVID-19 Protein Structure Frequency')
         plt.show()
+
+
 
 
 def getFileNames(location):
