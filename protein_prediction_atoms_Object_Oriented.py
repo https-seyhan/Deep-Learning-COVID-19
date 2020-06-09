@@ -10,6 +10,7 @@ from itertools import groupby
 import glob
 import seaborn as sb
 from matplotlib import pyplot as plt
+import numpy as np
 
 #fig, axs = plt.subplots(ncols=3)
 
@@ -163,6 +164,7 @@ class Atoms:
 
         print("All data columns ", alldata.columns)
         print("All data length ", len(alldata))
+        alldata.to_csv('alldata_freq.csv', sep=',', index=False)
         self.__visualiseAll(alldata)
 
     def visualiseData(self, filename):
@@ -197,13 +199,12 @@ class Atoms:
         # sb.barplot(data=self.nsp6, x='Atom', y='freq').set_title('nsp6')
         # sb.barplot(data=self.M_protein, x='Atom', y='freq').set_title('M_protein')
         # sb.barplot(data=self.Protein_3a, x='Atom', y='freq').set_title('Protein_3a')
-        
+        #plt.hist([self.nsp4['freq'], self.nsp2['freq']])
+        #plt.show()
+
         #Show frequency Distribution of each protein types of COVID-19
         sb.barplot(data=alldata, x= 'protein_name', y='freq', estimator=sum).set_title('COVID-19 Protein Structure Frequency')
         plt.show()
-
-
-
 
 def getFileNames(location):
     files = []
