@@ -146,6 +146,25 @@ class Atoms:
         self.Protein_3a['protein_name'] = 'Protein_3a'
         print('Protein_3a Columns ',self.Protein_3a.columns )
 
+        # protein structure size
+        print("PL_PRO_C_terminal Size", len(self.PL_PRO_C_terminal))
+        print("nsp2 Size ", len(self.nsp2))
+        print("nsp4 Size ", len(self.nsp4))
+        print("nsp6 Size", len(self.nsp6))
+        print("M_protein Size", len(self.M_protein))
+        print("Protein_3a Size", len(self.Protein_3a))
+
+
+        alldata = self.PL_PRO_C_terminal.append(self.nsp2, ignore_index=True)
+        alldata = alldata.append(self.nsp4, ignore_index=True)
+        alldata = alldata.append(self.nsp6, ignore_index=True)
+        alldata = alldata.append(self.M_protein, ignore_index=True)
+        alldata = alldata.append(self.Protein_3a, ignore_index=True)
+
+        print("All data columns ", alldata.columns)
+        print("All data length ", len(alldata))
+        self.__visualiseAll(alldata)
+
     def visualiseData(self, filename):
         print("Visualise Data")
         print("File Name !!!!!!", filename )
@@ -169,7 +188,8 @@ class Atoms:
         elif filename.split(".")[0] == 'Protein_3a':
             sb.barplot(data=self.Protein_3a, x='Atom', y='freq')
             plt.show()
-    def visualiseAll(self):
+
+    def __visualiseAll(self, alldata):
         print("Visualise All")
         # sb.barplot(data=self.PL_PRO_C_terminal, x='Atom', y='freq').set_title('PL_PRO_C_terminal')
         # sb.barplot(data=self.nsp2, x='Atom', y='freq').set_title('nsp2')
