@@ -166,7 +166,8 @@ class Atoms:
         print("All data length ", len(alldata))
         alldata.to_csv('alldata_freq.csv', sep=',', index=False)
         #self.__visualiseAll(alldata)
-        self.__histGraphs(alldata)
+        #self.__histGraphs(alldata)
+        self.__dotPlots(alldata)
 
     def visualiseData(self, filename):
         print("Visualise Data")
@@ -223,10 +224,14 @@ class Atoms:
         plt.xlabel("Atom Frequency", fontweight='bold')
         plt.ylabel("Distribution %", fontweight='bold')
         plt.legend(loc= 'upper right')
+
         plt.show()
 
-
-
+    def __dotPlots(self, alldata):
+        # Draw a categorical scatterplot to show each observation
+        sb.swarmplot(x="Atom", y="freq", hue="protein_name",
+                      data=alldata)
+        plt.show()
 
 def getFileNames(location):
     files = []
