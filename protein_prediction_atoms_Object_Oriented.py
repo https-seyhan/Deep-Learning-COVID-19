@@ -212,7 +212,7 @@ class Atoms:
 
     def __histGraphs(self, alldata):
         plt.figure(figsize=(20,10))
-        bins = np.linspace(0, 1200, 200)
+        bins = np.linspace(0, 1200, 20)
         plt.hist(alldata[alldata['protein_name']=='PL_PRO_C_terminal']['freq'], bins, alpha=0.5, normed=True, label='PL_PRO_C_terminal')
         plt.hist(alldata[alldata['protein_name'] == 'nsp2']['freq'], bins, alpha=0.5, normed=True, label='nsp2')
         plt.hist(alldata[alldata['protein_name'] == 'nsp4']['freq'], bins, alpha=0.5, normed=True, label='nsp4')
