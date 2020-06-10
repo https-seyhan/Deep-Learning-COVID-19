@@ -11,6 +11,8 @@ import glob
 import seaborn as sb
 from matplotlib import pyplot as plt
 import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import export_graphviz
 
 #fig, axs = plt.subplots(ncols=3)
 
@@ -167,7 +169,9 @@ class Atoms:
         alldata.to_csv('alldata_freq.csv', sep=',', index=False)
         #self.__visualiseAll(alldata)
         #self.__histGraphs(alldata)
-        self.__dotPlots(alldata)
+        #self.__dotPlots(alldata)
+        #self.__heatMap(alldata)
+        self.__decisionTree(alldata)
 
     def visualiseData(self, filename):
         print("Visualise Data")
@@ -232,6 +236,13 @@ class Atoms:
         sb.swarmplot(x="Atom", y="freq", hue="protein_name",
                       data=alldata)
         plt.show()
+
+    def __heatMap(self, alldata):
+        print("heat Map called.")
+        alldata = alldata.set_index('Atom')
+
+    def __decisionTree(self, alldata):
+        print("Decision Tree Called!!!")
 
 def getFileNames(location):
     files = []
