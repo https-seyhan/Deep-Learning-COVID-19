@@ -165,7 +165,8 @@ class Atoms:
         print("All data columns ", alldata.columns)
         print("All data length ", len(alldata))
         alldata.to_csv('alldata_freq.csv', sep=',', index=False)
-        self.__visualiseAll(alldata)
+        #self.__visualiseAll(alldata)
+        self.__histGraphs(alldata)
 
     def visualiseData(self, filename):
         print("Visualise Data")
@@ -208,6 +209,21 @@ class Atoms:
         #sb.barplot(data=alldata, x= 'protein_name', y='freq', estimator=sum).set_title('COVID-19 Protein Structure Frequency')
         sb.barplot(data=alldata, x='protein_name', y='freq', estimator=lambda x: sum(x)/sumall).set_title('COVID-19 Protein Structure Frequency')
         plt.show()
+
+    def __histGraphs(self, alldata):
+        bins = np.linspace(0, 1500, 200)
+        plt.hist(alldata[alldata['protein_name']=='PL_PRO_C_terminal']['freq'], bins, alpha=0.5, normed=True, label='PL_PRO_C_terminal')
+        plt.hist(alldata[alldata['protein_name'] == 'nsp2']['freq'], bins, alpha=0.5, normed=True, label='nsp2')
+        plt.hist(alldata[alldata['protein_name'] == 'nsp4']['freq'], bins, alpha=0.5, normed=True, label='nsp4')
+        plt.hist(alldata[alldata['protein_name'] == 'nsp6']['freq'], bins, alpha=0.5, normed=True, label='nsp6')
+        plt.hist(alldata[alldata['protein_name'] == 'M_protein']['freq'], bins, alpha=0.5, normed=True, label='M_protein')
+        plt.hist(alldata[alldata['protein_name'] == 'Protein_3a']['freq'], bins, alpha=0.5, normed=True, label='Protein_3a')
+        plt.title("Protein Distribution")
+        plt.legend(loc= 'upper right')
+        plt.show()
+
+
+
 
 def getFileNames(location):
     files = []
