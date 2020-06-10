@@ -211,7 +211,7 @@ class Atoms:
         plt.show()
 
     def __histGraphs(self, alldata):
-        bins = np.linspace(0, 1500, 200)
+        bins = np.linspace(0, 1200, 200)
         plt.hist(alldata[alldata['protein_name']=='PL_PRO_C_terminal']['freq'], bins, alpha=0.5, normed=True, label='PL_PRO_C_terminal')
         plt.hist(alldata[alldata['protein_name'] == 'nsp2']['freq'], bins, alpha=0.5, normed=True, label='nsp2')
         plt.hist(alldata[alldata['protein_name'] == 'nsp4']['freq'], bins, alpha=0.5, normed=True, label='nsp4')
@@ -219,6 +219,8 @@ class Atoms:
         plt.hist(alldata[alldata['protein_name'] == 'M_protein']['freq'], bins, alpha=0.5, normed=True, label='M_protein')
         plt.hist(alldata[alldata['protein_name'] == 'Protein_3a']['freq'], bins, alpha=0.5, normed=True, label='Protein_3a')
         plt.title("Protein Distribution")
+        plt.xlabel("Atom Frequency")
+        plt.ylabel("Distribution %")
         plt.legend(loc= 'upper right')
         plt.show()
 
