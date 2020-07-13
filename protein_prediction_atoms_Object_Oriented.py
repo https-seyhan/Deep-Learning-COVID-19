@@ -11,6 +11,7 @@ import glob
 import seaborn as sb
 from matplotlib import pyplot as plt
 import numpy as np
+from sklearn import preprocessing
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.tree import export_graphviz
 
@@ -170,8 +171,8 @@ class Atoms:
         #self.__visualiseAll(alldata)
         #self.__histGraphs(alldata)
         #self.__dotPlots(alldata)
-        #self.__heatMap(alldata)
-        self.__decisionTree(alldata)
+        self.__heatMap(alldata)
+        #self.__decisionTree(alldata)
 
     def visualiseData(self, filename):
         print("Visualise Data")
@@ -240,9 +241,39 @@ class Atoms:
     def __heatMap(self, alldata):
         print("heat Map called.")
         alldata = alldata.set_index('Atom')
+        fig, ax = plt.subplots()
+        im = ax.imshow(np.real(alldata['freq']))
+
+        ax.set_xticks(np.arange(len(alldata['Atom'])))
+        ax.set_yticks(np.arange(len(alldata['protein_name'])))
+        # ... and label them with the respective list entries
+        ax.set_xticklabels(alldata['Atom'])
+        ax.set_yticklabels(alldata['protein_name'])
+
+        # Rotate the tick labels and set their alignment.
+        plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
+                 rotation_mode="anchor")
+
+        # Loop over data dimensions and create text annotations.
+        for i in range(len(alldata['protein_name'])):
+            for j in range(len(alldata['Atom'])):
+                text = ax.text(j, i, alldata['freq'][i, j],
+                               ha="center", va="center", color="w")
+
+        ax.set_title("Harvest of local farmers (in tons/year)")
+        fig.tight_layout()
+        plt.show()
 
     def __decisionTree(self, alldata):
         print("Decision Tree Called!!!")
+
+        X_train = alldata.filter(items=['Atom', 'freq'])
+        y_train = alldata.filter(items=['protein_name'])
+        #X_train = alldata.drop("protein_name")
+        print("X train Columns ", X_train.columns)
+        tree = DecisionTreeClassifier(random_state=0)
+        tree.fit(X_train, y_train)
+        #print("Accuracy on training set: {:.3f}".format(tree.score(X_train, y_train)))
 
 def getFileNames(location):
     files = []
