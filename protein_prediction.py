@@ -18,6 +18,7 @@ atoms = structure.get_atoms()
 lt = 0
 atomlist = []
 
+# collect COVID-19 atoms
 for atom in atoms:
     #print(type(atom))
     atomlist.append(atom)
