@@ -9,7 +9,7 @@ from collections import Counter
 from itertools import groupby
 import glob # The glob module finds all the pathnames matching a specified pattern according to the rule
 
-# read
+# parse protein structures
 sloppyparser = PDBParser(PERMISSIVE=True,
                          structure_builder=xpdb.SloppyStructureBuilder())
 structure = sloppyparser.get_structure('MD_system', 'M_protein.pdb')
