@@ -38,7 +38,7 @@ atomfreq=collections.Counter(atoms)
 
 sortedatomfreq = {k: v for k, v in sorted(atomfreq.items(), key=lambda item: item[1], reverse=True)}
 
-#Print Atom frequency by descented order
+# Print Atom frequency by descented order
 
 for item, val in enumerate(sortedatomfreq):
     #print(" Item {} has the value of {}".format(item, val))
