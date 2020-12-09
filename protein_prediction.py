@@ -7,7 +7,7 @@ import xpdb   # this is the module described below
 import pandas as pd
 from collections import Counter
 from itertools import groupby
-import glob
+import glob # The glob module finds all the pathnames matching a specified pattern according to the rule
 
 # read
 sloppyparser = PDBParser(PERMISSIVE=True,
