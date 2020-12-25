@@ -1,8 +1,6 @@
 from Bio.PDB import *
 import os
 import collections
-location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
-os.chdir(location)
 import xpdb   # this is the module described below
 import pandas as pd
 from collections import Counter
@@ -14,6 +12,9 @@ import numpy as np
 from sklearn import preprocessing
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.tree import export_graphviz
+
+location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
+os.chdir(location)
 
 #fig, axs = plt.subplots(ncols=3)
 
