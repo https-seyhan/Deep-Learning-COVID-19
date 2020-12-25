@@ -26,8 +26,6 @@ sloppyparser = PDBParser(PERMISSIVE=True,
 class Atoms:
 
     def __init__(self):
-
-        
         self.PL_PRO_C_terminal = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp2 = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp4= pd.DataFrame(columns=['Atom', 'freq'])
