@@ -19,7 +19,7 @@ os.chdir(location)
 #fig, axs = plt.subplots(ncols=3)
 
 #This codes get the frequency distribution of each atoms in all protein types and outputs them to CSV files.
-# read
+# read the structure
 sloppyparser = PDBParser(PERMISSIVE=True,
                          structure_builder=xpdb.SloppyStructureBuilder())
 
