@@ -261,7 +261,7 @@ class Atoms:
                 text = ax.text(j, i, alldata['freq'][i, j],
                                ha="center", va="center", color="w")
 
-        ax.set_title("Harvest of local farmers (in tons/year)")
+        ax.set_title("")
         fig.tight_layout()
         plt.show()
 
