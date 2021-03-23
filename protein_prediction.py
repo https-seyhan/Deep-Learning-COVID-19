@@ -32,7 +32,7 @@ for item, val in enumerate(atomdict):
    atoms.append(value)
    
 atomfreq=collections.Counter(atoms)
-#print(atomfreq)
+
 
 # sort COVID-19 atams by their frequencies
 sortedatomfreq = {k: v for k, v in sorted(atomfreq.items(), key=lambda item: item[1], reverse=True)}
