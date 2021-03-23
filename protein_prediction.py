@@ -31,7 +31,7 @@ for item, val in enumerate(atomdict):
    #print(" Item {} has the value of {}".format(item, val))
    value = str(val).strip('<>Atom ')
    atoms.append(value)
-   #print(value)
+   
    atoms.append(value)
 
 atomfreq=collections.Counter(atoms)
