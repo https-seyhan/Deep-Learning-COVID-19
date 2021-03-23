@@ -23,7 +23,7 @@ atomlist = []
 for atom in atoms:
     #print(type(atom))
     atomlist.append(atom)
-
+    
 atomdict = Counter(atomlist)
 
 
