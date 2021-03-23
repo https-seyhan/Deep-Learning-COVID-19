@@ -1,14 +1,15 @@
 
 import os
 import collections
-location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
-os.chdir(location)
+
 import xpdb   # this is the module described below
 import pandas as pd
 from collections import Counter
 from itertools import groupby
 import glob # The glob module finds all the pathnames matching a specified pattern according to the rule
 from Bio.PDB import *
+location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
+os.chdir(location)
 
 # parse protein structures
 sloppyparser = PDBParser(PERMISSIVE=True,
