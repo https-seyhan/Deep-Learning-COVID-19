@@ -44,7 +44,6 @@ for item, val in enumerate(sortedatomfreq):
     print(" Atom {} has the value of {}".format(val, atomfreq[val]))
     #print(" Item {} has the value of {}".format(item, val))
 
-
 def getFileNames(location):
     files = []
     print('getFileNames called!!!')
