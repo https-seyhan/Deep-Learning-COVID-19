@@ -26,7 +26,6 @@ for atom in atoms:
     
 atomdict = Counter(atomlist)
 
-
 for item, val in enumerate(atomdict):
    #print(" Item {} has the value of {}".format(item, val))
    value = str(val).strip('<>Atom ')
