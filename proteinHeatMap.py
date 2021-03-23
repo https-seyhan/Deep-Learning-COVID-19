@@ -25,8 +25,6 @@ def plotHeadMap():
 	sb.heatmap(pivotdata, annot=True, linewidths=.7, fmt='g', cmap='tab10', ax=ax)
 	plt.show()
 
-	
-
 def plotBoxPlot():
 	heatdata.describe()
 
