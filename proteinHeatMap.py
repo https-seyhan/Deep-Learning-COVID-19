@@ -24,7 +24,6 @@ def plotHeadMap():
 	#f, ax = plt.subplots(figsize=(200, 200))
 
 	fig, ax = plt.subplots(figsize=(20,7))  
-
 	sb.heatmap(pivotdata, annot=True, linewidths=.7, fmt='g', cmap='tab10', ax=ax)
 	plt.show()
 
