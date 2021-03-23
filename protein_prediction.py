@@ -2,9 +2,10 @@ import os
 import collections
 import xpdb   # this is the module described below
 import pandas as pd
+import glob # The glob module finds all the pathnames matching a specified pattern according to the rule
 from collections import Counter
 from itertools import groupby
-import glob # The glob module finds all the pathnames matching a specified pattern according to the rule
+
 from Bio.PDB import *
 location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
 os.chdir(location)
