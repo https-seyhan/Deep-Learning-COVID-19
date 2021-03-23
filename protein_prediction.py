@@ -54,6 +54,3 @@ def getFileNames(location):
 if __name__ == '__main__':
     fileNames = getFileNames(location)
     print(fileNames)
-
-
-
