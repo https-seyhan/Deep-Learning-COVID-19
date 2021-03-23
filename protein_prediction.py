@@ -21,7 +21,6 @@ atomlist = []
 
 # collect COVID-19 atoms
 for atom in atoms:
-    
     atomlist.append(atom)
     
 atomdict = Counter(atomlist)
