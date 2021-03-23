@@ -16,6 +16,7 @@ sloppyparser = PDBParser(PERMISSIVE=True,
 structure = sloppyparser.get_structure('MD_system', 'M_protein.pdb')
 atoms = structure.get_atoms()
 lt = 0
+atoms = []
 atomlist = []
 
 # collect COVID-19 atoms
@@ -25,7 +26,7 @@ for atom in atoms:
 
 atomdict = Counter(atomlist)
 
-atoms = []
+
 for item, val in enumerate(atomdict):
    #print(" Item {} has the value of {}".format(item, val))
    value = str(val).strip('<>Atom ')
