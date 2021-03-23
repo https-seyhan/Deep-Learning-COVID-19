@@ -46,8 +46,7 @@ for item, val in enumerate(sortedatomfreq):
 
 def getFileNames(location):
     files = []
-    print('getFileNames called!!!')
-    #print(location)
+
     for file_name in glob.iglob(location + '/*.pdb', recursive=True):
         #print(file_name)
         #print(file_name.split('/')[-1])
