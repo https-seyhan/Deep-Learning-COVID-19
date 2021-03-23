@@ -8,7 +8,6 @@ from matplotlib import  pyplot as plt
 print(sys.version)
 os.chdir('/home/saul/protein')
 
-
 heatdata = pd.read_csv('alldata_freq.csv', sep = ',')
 #heatdata = heatdata.pivot("Atom", "freq", "protein_name")
 pivotdata = pd.pivot_table(heatdata, values='freq', index = ['Atom'], columns=['protein_name'], aggfunc=np.sum)
