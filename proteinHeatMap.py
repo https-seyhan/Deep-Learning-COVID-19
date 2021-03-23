@@ -6,7 +6,6 @@ import sys
 from matplotlib import  pyplot as plt
 
 print(sys.version)
-
 os.chdir('/home/saul/protein')
 
 
