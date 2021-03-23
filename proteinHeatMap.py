@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import seaborn as sb
 import os
-
 import sys
 from matplotlib import  pyplot as plt
 print(sys.version)
