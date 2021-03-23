@@ -22,7 +22,7 @@ def plotHeadMap():
 	#print(heatdata.head())
 	print(type(heatdata['freq']))
 	heatdata['freq'] = pd.to_numeric(heatdata['freq'],  downcast='signed')
-	#f, ax = plt.subplots(figsize=(200, 200))
+	
 	sb.heatmap(pivotdata, annot=True, linewidths=.7, fmt='g', cmap='tab10', ax=ax)
 	plt.show()
 
