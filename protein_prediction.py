@@ -14,7 +14,6 @@ os.chdir(location)
 sloppyparser = PDBParser(PERMISSIVE=True,
                          structure_builder=xpdb.SloppyStructureBuilder())
 structure = sloppyparser.get_structure('MD_system', 'M_protein.pdb')
-
 atoms = structure.get_atoms()
 lt = 0
 atomlist = []
