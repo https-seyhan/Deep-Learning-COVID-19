@@ -27,7 +27,6 @@ def plotHeadMap():
 
 def plotBoxPlot():
 	heatdata.describe()
-
 	ax = sb.boxplot(x= heatdata['freq'])
 	plt.show()
 
