@@ -1,4 +1,4 @@
-from Bio.PDB import *
+
 import os
 import collections
 import xpdb   # this is the module described below
@@ -12,7 +12,7 @@ from sklearn.tree import export_graphviz
 from collections import Counter
 from itertools import groupby
 from matplotlib import pyplot as plt
-
+from Bio.PDB import *
 location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
 os.chdir(location)
 
