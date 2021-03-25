@@ -116,12 +116,3 @@ if __name__ == '__main__':
     for name in range(len(fileNames)):
         print(fileNames[name])
         proteins.getPDB(fileNames[name])
-
-
-
-
-
-
-
-
-
