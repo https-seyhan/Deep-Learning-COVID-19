@@ -98,8 +98,6 @@ class Atoms:
     def __outputPDB(self):
         self.PL_PRO_C_terminal.to_csv('self.PL_PRO_C_terminal_freq.csv', sep=',', index=False)
 
-
-
 def getFileNames(location):
     files = []
     print('getFileNames called!!!')
