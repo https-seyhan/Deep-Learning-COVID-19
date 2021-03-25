@@ -13,7 +13,6 @@ sloppyparser = PDBParser(PERMISSIVE=True,
                          structure_builder=xpdb.SloppyStructureBuilder())
 
 class Atoms:
-
     def __init__(self):
         self.atomlist= []
         self.PL_PRO_C_terminal = pd.DataFrame(columns=['Atom', 'freq'])
