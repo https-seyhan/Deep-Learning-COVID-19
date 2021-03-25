@@ -14,7 +14,7 @@ heatdata = pd.read_csv('alldata_freq.csv', sep = ',')
 
 
 def shapeData():
-	print("Shapes ")
+	
 	#atoms
 	atomsAve = pd.pivot_table(heatdata, values='freq', index= ['Atom'], aggfunc = np.average )
 	#print("Atom Shape ", atomsAve.head())
