@@ -70,8 +70,7 @@ class Atoms:
         # Print Atom frequency by descented order
         print("File Name {} !!!".format(self.pdbfile))
         for item, val in enumerate(sortedatomfreq):
-
-
+         
             if self.pdbfile == 'PL_PRO_C_terminal':
                 #print("File {} called".format(self.pdbfile ))
                 self.__getPDBData(val,atomfreq[val], self.pdbfile)
