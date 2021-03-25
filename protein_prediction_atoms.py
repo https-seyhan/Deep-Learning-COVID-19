@@ -96,7 +96,6 @@ class Atoms:
         new_row = {'Atom': val, 'freq': atomfreq[val]}
         self.pdbname= self.pdbname.append(new_row, ignore_index=True, )
 
-
     def __outputPDB(self):
         self.PL_PRO_C_terminal.to_csv('self.PL_PRO_C_terminal_freq.csv', sep=',', index=False)
 
