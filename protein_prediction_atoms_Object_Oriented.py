@@ -148,8 +148,7 @@ class Atoms:
         print("nsp6 Size", len(self.nsp6))
         print("M_protein Size", len(self.M_protein))
         print("Protein_3a Size", len(self.Protein_3a))
-
-
+        
         alldata = self.PL_PRO_C_terminal.append(self.nsp2, ignore_index=True)
         alldata = alldata.append(self.nsp4, ignore_index=True)
         alldata = alldata.append(self.nsp6, ignore_index=True)
