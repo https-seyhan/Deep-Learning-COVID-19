@@ -10,7 +10,6 @@ print(sys.version)
 
 os.chdir('/home/saul/protein')
 
-
 heatdata = pd.read_csv('alldata_freq.csv', sep = ',')
 
 
