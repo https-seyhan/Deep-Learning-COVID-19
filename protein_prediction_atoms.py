@@ -71,7 +71,6 @@ class Atoms:
                 self.PL_PRO_C_terminal = self.PL_PRO_C_terminal.append(new_row, ignore_index=True, )
                 #print("DataFrame ", self.PL_PRO_C_terminal)
 
-
             elif self.pdbfile == 'nsp2':
                 print("File {} called".format(self.pdbfile ))
 
