@@ -223,7 +223,6 @@ class Atoms:
         plt.xlabel("Atom Frequency", fontweight='bold')
         plt.ylabel("Distribution %", fontweight='bold')
         plt.legend(loc= 'upper right')
-
         plt.show()
 
     def __dotPlots(self, alldata):
