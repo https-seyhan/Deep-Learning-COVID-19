@@ -159,9 +159,7 @@ class Atoms:
         print("All data columns ", alldata.columns)
         print("All data length ", len(alldata))
         alldata.to_csv('alldata_freq.csv', sep=',', index=False)
-        #self.__visualiseAll(alldata)
-        #self.__histGraphs(alldata)
-        #self.__dotPlots(alldata)
+
         self.__heatMap(alldata)
         #self.__decisionTree(alldata)
 
