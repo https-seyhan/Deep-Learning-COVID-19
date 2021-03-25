@@ -58,7 +58,6 @@ class Atoms:
         self.__printAtomFreq(sortedatomfreq, atomfreq)
 
     def __printAtomFreq(self, sortedatomfreq, atomfreq):
-
         # Print Atom frequency by descented order
         print("File Name {} !!!".format(self.pdbfile))
         for item, val in enumerate(sortedatomfreq):
