@@ -15,7 +15,7 @@ from Bio.PDB import *
 location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
 os.chdir(location)
 
-#fig, axs = plt.subplots(ncols=3)
+
 
 # This code gets the frequency distribution of each atoms in all protein types and outputs them to CSV files.
 # read the structure
