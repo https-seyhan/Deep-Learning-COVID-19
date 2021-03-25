@@ -1,10 +1,11 @@
 import pandas as pd
 import numpy as np
 import seaborn as sb
-from matplotlib import  pyplot as plt
-from sklearn.cluster import KMeans
+
 import os
 import sys
+from matplotlib import  pyplot as plt
+from sklearn.cluster import KMeans
 
 print(sys.version)
 
