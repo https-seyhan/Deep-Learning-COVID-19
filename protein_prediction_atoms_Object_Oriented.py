@@ -3,8 +3,7 @@ import os
 import collections
 import xpdb   # this is the module described below
 import pandas as pd
-from collections import Counter
-from itertools import groupby
+
 import glob
 import seaborn as sb
 from matplotlib import pyplot as plt
@@ -12,6 +11,8 @@ import numpy as np
 from sklearn import preprocessing
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.tree import export_graphviz
+from collections import Counter
+from itertools import groupby
 
 location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
 os.chdir(location)
