@@ -251,7 +251,6 @@ class Atoms:
 def getFileNames(location):
     files = []
     print('getFileNames called!!!')
-    
     for file_name in glob.iglob(location + '/*.pdb', recursive=True):
         #print(file_name.split('/')[-1])
         files.append(file_name.split('/')[-1])
