@@ -224,7 +224,6 @@ class Atoms:
         # ... and label them with the respective list entries
         ax.set_xticklabels(alldata['Atom'])
         ax.set_yticklabels(alldata['protein_name'])
-
         # Rotate the tick labels and set their alignment.
         plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
                  rotation_mode="anchor")
