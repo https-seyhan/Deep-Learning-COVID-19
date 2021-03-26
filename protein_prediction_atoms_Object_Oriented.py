@@ -152,7 +152,7 @@ class Atoms:
         #self.__decisionTree(alldata)
 
     def visualiseData(self, filename):
-        print("Visualise Data")
+        
         
         if filename.split(".")[0] == 'PL_PRO_C_terminal':
             print("PL_PRO_C_terminal called")
