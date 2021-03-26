@@ -233,7 +233,7 @@ class Atoms:
         plt.show()
 
     def __decisionTree(self, alldata):
-        print("Decision Tree Called!!!")
+        
 
         X_train = alldata.filter(items=['Atom', 'freq'])
         y_train = alldata.filter(items=['protein_name'])
