@@ -175,7 +175,7 @@ class Atoms:
             plt.show()
 
     def __visualiseAll(self, alldata):
-        print("Visualise All")
+        
         # sb.barplot(data=self.PL_PRO_C_terminal, x='Atom', y='freq').set_title('PL_PRO_C_terminal')
         # sb.barplot(data=self.nsp2, x='Atom', y='freq').set_title('nsp2')
         # sb.barplot(data=self.nsp4, x='Atom', y='freq').set_title('nsp4'
