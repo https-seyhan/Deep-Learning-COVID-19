@@ -258,12 +258,3 @@ if __name__ == '__main__':
         #proteins.visualiseData(fileNames[name])
     #proteins.visualiseAll()
     proteins.combineAllData()
-
-
-
-
-
-
-
-
-
