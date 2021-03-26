@@ -57,7 +57,7 @@ class Atoms:
             value = str(val).strip('<>Atom ')
             atoms.append(value)
             
-            #atoms.append(value)
+            
         atomfreq = collections.Counter(atoms) # count number of occurrences of atoms
         sortedatomfreq = {k: v for k, v in sorted(atomfreq.items(), key=lambda item: item[1], reverse=True)}
         #print(sortedatomfreq)
