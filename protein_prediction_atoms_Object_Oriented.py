@@ -237,7 +237,6 @@ class Atoms:
             for j in range(len(alldata['Atom'])):
                 text = ax.text(j, i, alldata['freq'][i, j],
                                ha="center", va="center", color="w")
-
         ax.set_title("COVID-19")
         fig.tight_layout()
         plt.show()
