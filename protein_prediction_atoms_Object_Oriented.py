@@ -43,7 +43,6 @@ class Atoms:
         print("Residue")
 
     def __atomdict(self):
-        
         atomlist = []
         for atom in self.atoms:
             # print(type(atom))
