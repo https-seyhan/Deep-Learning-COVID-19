@@ -152,7 +152,6 @@ class Atoms:
         #self.__decisionTree(alldata)
 
     def visualiseData(self, filename):
-          
         if filename.split(".")[0] == 'PL_PRO_C_terminal':
             print("PL_PRO_C_terminal called")
             sb.barplot(data=self.PL_PRO_C_terminal, x='Atom', y='freq')
