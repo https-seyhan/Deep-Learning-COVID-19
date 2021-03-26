@@ -117,7 +117,6 @@ class Atoms:
         self.Protein_3a.to_csv('Protein_3a.csv', sep=',', index=False)
 
     def combineAllData(self):
-        
         self.PL_PRO_C_terminal['protein_name'] = 'PL_PRO_C_terminal'
         print('PL_PRO_C_terminal Columns ',self.PL_PRO_C_terminal.columns )
         self.nsp2['protein_name'] = 'nsp2'
