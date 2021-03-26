@@ -227,7 +227,6 @@ class Atoms:
         # Rotate the tick labels and set their alignment.
         plt.setp(ax.get_xticklabels(), rotation=45, ha="right",
                  rotation_mode="anchor")
-
         # Loop over data dimensions and create text annotations.
         for i in range(len(alldata['protein_name'])):
             for j in range(len(alldata['Atom'])):
