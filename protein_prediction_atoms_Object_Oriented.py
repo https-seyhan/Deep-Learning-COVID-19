@@ -232,7 +232,6 @@ class Atoms:
 
     def __decisionTree(self, alldata):
         
-
         X_train = alldata.filter(items=['Atom', 'freq'])
         y_train = alldata.filter(items=['protein_name'])
         #X_train = alldata.drop("protein_name")
