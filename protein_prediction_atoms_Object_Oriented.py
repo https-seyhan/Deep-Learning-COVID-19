@@ -94,7 +94,6 @@ class Atoms:
 
     def __getPDBData(self, val, freq, pdbname):
         #insert data to the dataframes
-        
         new_row = {'Atom': val, 'freq': freq}
         if pdbname == 'PL_PRO_C_terminal':
             self.PL_PRO_C_terminal = self.PL_PRO_C_terminal.append(new_row, ignore_index=True )
