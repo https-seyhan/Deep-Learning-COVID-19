@@ -183,7 +183,6 @@ class Atoms:
         # sb.barplot(data=self.Protein_3a, x='Atom', y='freq').set_title('Protein_3a')
         #plt.hist([self.nsp4['freq'], self.nsp2['freq']])
         #plt.show()
-
         alldata['sumfreq'] = sum(alldata['freq'])
         sumall = sum(alldata['freq'])
         #Show frequency Distribution of each protein types of COVID-19
