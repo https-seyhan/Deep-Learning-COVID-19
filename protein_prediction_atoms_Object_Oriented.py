@@ -210,7 +210,7 @@ class Atoms:
         plt.show()
 
     def __heatMap(self, alldata):
-        print("heat Map called.")
+        
         alldata = alldata.set_index('Atom')
         fig, ax = plt.subplots()
         im = ax.imshow(np.real(alldata['freq']))
