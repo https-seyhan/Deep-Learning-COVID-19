@@ -95,7 +95,6 @@ class Atoms:
                 self.__getPDBData(val, atomfreq[val], self.pdbfile)
             else:
                 print("File does not exist")
-
         print("PDB file ", self.pdbfile)
         self.__outputPDB()
 
