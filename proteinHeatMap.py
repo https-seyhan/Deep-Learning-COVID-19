@@ -15,8 +15,7 @@ pivotdata = pd.pivot_table(heatdata, values='freq', index = ['Atom'], columns=['
 def plotHeadMap():
 	print("Head Map")
 	fig, ax = plt.subplots(figsize=(20,7)) 
-	#print(heatdata.describe())
-	#print(heatdata.head())
+
 	print(type(heatdata['freq']))
 	heatdata['freq'] = pd.to_numeric(heatdata['freq'],  downcast='signed')
 	sb.heatmap(pivotdata, annot=True, linewidths=.7, fmt='g', cmap='tab10', ax=ax)
