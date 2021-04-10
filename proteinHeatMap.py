@@ -13,7 +13,6 @@ heatdata = pd.read_csv('alldata_freq.csv', sep = ',')
 pivotdata = pd.pivot_table(heatdata, values='freq', index = ['Atom'], columns=['protein_name'], aggfunc=np.sum)
 
 
-
 def plotHeadMap():
 	print("Head Map")
 	fig, ax = plt.subplots(figsize=(20,7)) 
