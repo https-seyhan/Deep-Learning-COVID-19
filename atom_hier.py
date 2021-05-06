@@ -32,7 +32,6 @@ def kmeanClusters(atoms):
 	kmeans = KMeans(7)
 	print(kmeans)
 	kmeans.fit(averageVals)
-
 	identified_clusters = kmeans.fit_predict(averageVals)
 	print(identified_clusters)
 
