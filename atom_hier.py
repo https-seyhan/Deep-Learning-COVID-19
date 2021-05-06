@@ -34,7 +34,6 @@ def kmeanClusters(atoms):
 	kmeans.fit(averageVals)
 	identified_clusters = kmeans.fit_predict(averageVals)
 	print(identified_clusters)
-
 	#add clusters to the dataset
 	atomClusters = atoms.copy()
 	atomClusters['Clusters'] = identified_clusters
