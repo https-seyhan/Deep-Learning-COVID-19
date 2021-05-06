@@ -49,7 +49,7 @@ class Atoms:
             # print(" Item {} has the value of {}".format(item, val))
             value = str(val).strip('<>Atom ')
             atoms.append(value)
-       
+      
             
 
         atomfreq = collections.Counter(atoms)
