@@ -30,7 +30,6 @@ class Atoms:
         self.__atomdict()
     def getResidue(self):
         print("Residue")
-
     def __atomdict(self):
         print("atomdict called!!!")
         for atom in self.atoms:
