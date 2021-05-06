@@ -22,7 +22,6 @@ def shapeData():
 	#print(atoms.head())
 	#print(atoms.columns)
 	#print(atoms['Average'])
-
 	kmeanClusters(atoms)
 
 def kmeanClusters(atoms):
