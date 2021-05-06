@@ -32,7 +32,6 @@ def testWork():
 	print(flights)
 	#ax = sb.heatmap(flights, annot=True, fmt="d")
 	#plt.show()
-
 if __name__ == '__main__':
 	plotHeadMap()
 	#plotBoxPlot()
