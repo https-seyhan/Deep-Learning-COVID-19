@@ -29,7 +29,6 @@ def kmeanClusters(atoms):
 
 	averageVals = atoms.iloc[:, 0:1]
 	print("Avera Variable ",averageVals.head())
-
 	#cluster
 	kmeans = KMeans(7)
 	print(kmeans)
