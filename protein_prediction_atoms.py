@@ -32,11 +32,11 @@ class Atoms:
 
     def getResidue(self):
         print("Residue")
-
+        
     def __atomdict(self):
         print("atomdict called!!!")
         for atom in self.atoms:
-        
+       
             self.atomlist.append(atom)
         atomdict = Counter(self.atomlist)
         #print(atomdict)
