@@ -11,7 +11,6 @@ print(sys.version)
 os.chdir('/home/saul/protein')
 heatdata = pd.read_csv('alldata_freq.csv', sep = ',')
 
-
 def shapeData():
 	#atoms
 	atomsAve = pd.pivot_table(heatdata, values='freq', index= ['Atom'], aggfunc = np.average )
