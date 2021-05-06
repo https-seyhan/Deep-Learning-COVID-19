@@ -37,7 +37,7 @@ class Atoms:
     def __atomdict(self):
         print("atomdict called!!!")
         for atom in self.atoms:
-            # print(type(atom))
+            
             self.atomlist.append(atom)
         atomdict = Counter(self.atomlist)
         #print(atomdict)
