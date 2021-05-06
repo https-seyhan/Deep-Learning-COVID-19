@@ -46,6 +46,5 @@ def kmeanClusters(atoms):
 	sb.catplot(x="Atom", y="Average", hue="Clusters", kind="swarm", data=atomClusters);
 	plt.show()
 
-
 if __name__ == '__main__':
 	shapeData()
