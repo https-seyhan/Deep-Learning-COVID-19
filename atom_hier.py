@@ -45,7 +45,7 @@ def kmeanClusters(atoms):
 	#plot data points
 	#plt.hist(atomClusters['Average'], color= atomClusters['Clusters'] )
 	sb.catplot(x="Atom", y="Average", hue="Clusters", kind="swarm", data=atomClusters);
-	
+
 	plt.show()
 
 
