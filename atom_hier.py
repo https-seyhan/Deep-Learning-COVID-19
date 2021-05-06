@@ -19,7 +19,6 @@ def shapeData():
 	atoms = pd.merge(atomsAve, atomsMedian, how = "inner", on = ['Atom'])
 	#atoms = pd.DataFrame(atoms, columns=['Average', 'Median'])
 	atoms = atoms.rename(columns={'freq_x':'Average', 'freq_y':'Median'})
-
 	#print(atoms.head())
 	#print(atoms.columns)
 	#print(atoms['Average'])
