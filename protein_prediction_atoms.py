@@ -28,7 +28,6 @@ class Atoms:
         self.atoms = structure.get_atoms()
         print("File name {} has atoms {}".format(filename, self.atoms))
         self.__atomdict()
-
     def getResidue(self):
         print("Residue")
 
