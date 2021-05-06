@@ -87,7 +87,6 @@ class Atoms:
                 print("File {} called".format(self.pdbfile ))
             else:
                 print("File does not exist")
-
         print("PDB file ", self.pdbfile)
         self.__outputPDB()
 
