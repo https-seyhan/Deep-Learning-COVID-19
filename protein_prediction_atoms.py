@@ -11,7 +11,6 @@ os.chdir(location)
 
 sloppyparser = PDBParser(PERMISSIVE=True,
                          structure_builder=xpdb.SloppyStructureBuilder())
-
 class Atoms:
     def __init__(self):
         self.atomlist= []
