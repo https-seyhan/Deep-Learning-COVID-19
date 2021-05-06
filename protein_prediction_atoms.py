@@ -21,7 +21,6 @@ class Atoms:
         self.Protein_3a = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp6 = pd.DataFrame(columns=['Atom', 'freq'])
         self.pdbfile = ''
-
     def getPDB(self, filename):
         self.pdbfile = filename.split(".")[0]
         #print("File Name {} !!!".format(self.pdbfile))
