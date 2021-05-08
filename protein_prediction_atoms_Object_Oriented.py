@@ -168,7 +168,6 @@ class Atoms:
         elif filename.split(".")[0] == 'Protein_3a':
             sb.barplot(data=self.Protein_3a, x='Atom', y='freq')
             plt.show()
-
     def __visualiseAll(self, alldata):
         # sb.barplot(data=self.PL_PRO_C_terminal, x='Atom', y='freq').set_title('PL_PRO_C_terminal')
         # sb.barplot(data=self.nsp2, x='Atom', y='freq').set_title('nsp2')
