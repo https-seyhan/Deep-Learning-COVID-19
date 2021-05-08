@@ -128,7 +128,6 @@ class Atoms:
         print('M_protein Columns ',self.M_protein.columns )
         self.Protein_3a['protein_name'] = 'Protein_3a'
         print('Protein_3a Columns ',self.Protein_3a.columns )
-
         # protein structure size
         print("PL_PRO_C_terminal Size", len(self.PL_PRO_C_terminal))
         print("nsp2 Size ", len(self.nsp2))
