@@ -243,7 +243,6 @@ def getFileNames(location):
         #print(file_name.split('/')[-1])
         files.append(file_name.split('/')[-1])
     return files
-
 if __name__ == '__main__':
     proteins = Atoms()
     #proteins.atomdict()
