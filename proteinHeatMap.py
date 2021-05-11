@@ -30,7 +30,6 @@ def testWork():
 	print(flights)
 	flights = flights.pivot("month", "year", "passengers")
 	print(flights)
-
 	
 if __name__ == '__main__':
 	plotHeadMap()
