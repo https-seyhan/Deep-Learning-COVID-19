@@ -35,7 +35,6 @@ def kmeanClusters(atoms):
 	atomClusters = atoms.copy()
 	atomClusters['Clusters'] = identified_clusters
 	atomClusters.reset_index(level=0, inplace=True) #reset index
-
 	print(atomClusters.head())
 	print(atomClusters.columns)
 	#plot data points
