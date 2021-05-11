@@ -22,7 +22,7 @@ def shapeData():
 	kmeanClusters(atoms)
 
 def kmeanClusters(atoms):
-	
+
 	averageVals = atoms.iloc[:, 0:1]
 	print("Avera Variable ",averageVals.head())
 	#cluster
