@@ -9,7 +9,6 @@ from Bio.PDB import *
 
 location = '/home/saul/protein/544698_993839_bundle_archive/structures_4_3_2020'
 os.chdir(location)
-
 # parse protein structures
 sloppyparser = PDBParser(PERMISSIVE=True,
                          structure_builder=xpdb.SloppyStructureBuilder())
