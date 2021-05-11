@@ -33,4 +33,3 @@ def testWork():
 	
 if __name__ == '__main__':
 	plotHeadMap()
-
