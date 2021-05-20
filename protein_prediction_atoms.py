@@ -59,7 +59,7 @@ class Atoms:
                 print("File {} called".format(self.pdbfile ))
                 new_row = {'Atom': val, 'freq': atomfreq[val]}
                 self.PL_PRO_C_terminal = self.PL_PRO_C_terminal.append(new_row, ignore_index=True, )
-                #print("DataFrame ", self.PL_PRO_C_terminal)
+                
 
             elif self.pdbfile == 'nsp2':
                 print("File {} called".format(self.pdbfile ))
