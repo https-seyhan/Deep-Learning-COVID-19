@@ -28,7 +28,7 @@ class Atoms:
         self.nsp6 = pd.DataFrame(columns=['Atom', 'freq'])
         self.allData = pd.DataFrame(columns=['fileName','Atom', 'freq'])
         self.pdbfile = ''
-
+        
     def getPDB(self, filename):
         self.pdbfile = filename.split(".")[0]
       
