@@ -39,7 +39,7 @@ class Atoms:
 
     def getResidue(self):
         print("Residue")
-        
+       
     def __atomdict(self):
         atomlist = []
         for atom in self.atoms:        
