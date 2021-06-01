@@ -35,7 +35,6 @@ class Atoms:
         for atom in self.atoms:
             self.atomlist.append(atom)
         atomdict = Counter(self.atomlist)
-
         self.__atomfreq(atomdict)
     
     def __atomfreq(self, atomdict):
