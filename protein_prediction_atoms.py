@@ -22,7 +22,7 @@ class Atoms:
         
     def getPDB(self, filename):
         self.pdbfile = filename.split(".")[0]
-   
+  
         structure = sloppyparser.get_structure('MD_system', filename)
         self.atoms = structure.get_atoms()
         print("File name {} has atoms {}".format(filename, self.atoms))
