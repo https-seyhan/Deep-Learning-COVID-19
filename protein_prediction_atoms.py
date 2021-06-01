@@ -19,7 +19,7 @@ class Atoms:
         self.Protein_3a = pd.DataFrame(columns=['Atom', 'freq'])
         self.nsp6 = pd.DataFrame(columns=['Atom', 'freq'])
         self.pdbfile = ''
-      
+     
     def getPDB(self, filename):
         self.pdbfile = filename.split(".")[0]
         structure = sloppyparser.get_structure('MD_system', filename)
